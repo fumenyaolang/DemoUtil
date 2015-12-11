@@ -1,7 +1,6 @@
 package com.demos.jdk.servlet;
 
 import com.demos.util.HttpHeadUtil;
-import com.demos.vo.HttpHead;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
