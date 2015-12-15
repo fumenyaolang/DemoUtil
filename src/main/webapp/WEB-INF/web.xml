@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app id="web-conf" xmlns="http://java.sun.com/xml/ns/javaee" version="2.5" >
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <!-- servlet -->
+    <servlet>
+        <servlet-name>servletDemo</servlet-name>
+        <servlet-class>com.demos.jdk.servlet.ServletDemo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>loginPage</servlet-name>
+        <servlet-class>com.demos.jdk.servlet.LoginPage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>com.demos.jdk.servlet.Login</servlet-class>
+    </servlet>
+    <!-- servlet-mapping -->
+    <servlet-mapping>
+        <servlet-name>servletDemo</servlet-name>
+        <url-pattern>/jdk/servletDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginPage</servlet-name>
+        <url-pattern>/jdk/loginPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/jdk/login</url-pattern>
+    </servlet-mapping>
+</web-app>
