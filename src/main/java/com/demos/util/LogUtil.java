@@ -2,21 +2,29 @@ package com.demos.util;
 
 import sun.applet.Main;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.Buffer;
 import java.util.*;
 
 /**
  * Created by fumenyaolang on 2015-12-10.
  */
 public class LogUtil {
+
+    public static void out(Object log) {
+        System.out.println(log);
+    }
+
     /**
      * List value log
      */
     public static void listLog(List l) {
         if (l == null)
             return;
-        System.out.println(l.getClass().getName() + " : ");
+        out(l.getClass().getName() + " : ");
         for (int i = 0; i < l.size(); i++) {
-            System.out.println("        " + i + " : " + l.get(i));
+            out("        " + i + " : " + l.get(i));
         }
     }
 
@@ -26,10 +34,23 @@ public class LogUtil {
     public static void enumLog(Enumeration e) {
         if (e == null)
             return;
-        System.out.println(e.getClass().getName() + " :");
+        out(e.getClass().getName() + " :");
         int i = 0;
         while (e.hasMoreElements()) {
-            System.out.println("        " + i++ + " : " + e.nextElement().toString());
+            out("        " + i++ + " : " + e.nextElement().toString());
+        }
+    }
+
+    public static void inputStreamLog(InputStream in) throws IOException {
+        if (in == null) {
+            out("inputStream is null!!");
+            return ;
+        }
+        int len = 0;
+        byte[] buffer = new byte[128];
+        out(in + " : /r/n");
+        while ((len = in.read(buffer)) != -1) {
+            out(in.read());
         }
     }
 
@@ -56,33 +77,33 @@ public class LogUtil {
             return;
         switch (m) {
             case 0://方法一
-                System.out.println("method one");
+                out("method one");
                 Set<String> set = map.keySet();
                 for (String key : set) {
-                    System.out.println("key : " + key + "; value : " + map.get(key));
+                    out("key : " + key + "; value : " + map.get(key));
                 }
                 break;
             case 1://方法二
-                System.out.println("method two");
+                out("method two");
                 Iterator iter = map.entrySet().iterator();
                 while (iter.hasNext()) {
                     Map.Entry obj = (Map.Entry) iter.next();
-                    System.out.println("key : " + obj.getKey() + "; value : " + obj.getValue());
+                    out("key : " + obj.getKey() + "; value : " + obj.getValue());
                 }
                 break;
             case 2://方法三
-                System.out.println("method three");
+                out("method three");
                 Set<Map.Entry> entrySet = map.entrySet();
                 for (Map.Entry entry : entrySet) {
-                    System.out.println("key : " + entry.getKey() + "; value : " + entry.getValue());
+                    out("key : " + entry.getKey() + "; value : " + entry.getValue());
                 }
                 break;
             case 3://方法四
-                System.out.println("method four");
+                out("method four");
                 Iterator iter2 = map.values().iterator();
                 int i = 0;
                 while (iter2.hasNext()) {
-                    System.out.println(i++ + " ; value : " + iter2.next());
+                    out(i++ + " ; value : " + iter2.next());
                 }
                 break;
         }
