@@ -7,7 +7,10 @@ import java.io.InputStream;
  */
 public class Test {
     public static void main(String[] args) {
-        InputStream in = Test.class.getResourceAsStream("../webapp/test.html");
-        LogUtil.out(in);
+        String s = "index.html";
+        String[] split = s.split("\\.");
+        LogUtil.out(split.length);
+
+
     }
 }
