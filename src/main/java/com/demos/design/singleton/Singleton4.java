@@ -7,7 +7,7 @@ public class Singleton4 {
     private Singleton4() {
     }
 
-    public Singleton4 getInstance() {
+    public static Singleton4 getInstance() {
         return SingletonFactory.instance;
     }
 
