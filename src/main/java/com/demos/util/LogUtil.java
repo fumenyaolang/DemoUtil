@@ -1,10 +1,7 @@
 package com.demos.util;
 
-import sun.applet.Main;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.Buffer;
 import java.util.*;
 
 /**
@@ -44,7 +41,7 @@ public class LogUtil {
     public static void inputStreamLog(InputStream in) throws IOException {
         if (in == null) {
             out("inputStream is null!!");
-            return ;
+            return;
         }
         int len = 0;
         byte[] buffer = new byte[128];
