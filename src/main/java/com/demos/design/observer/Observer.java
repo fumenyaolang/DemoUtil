@@ -1,8 +1,9 @@
 package com.demos.design.observer;
 
 /**
- * Created by fumenyaolang on 2016-01-12.
+ * 观察者模式的观察者
+ * 该接口是观察者的抽象，定义了主体通知的动作
  */
 public interface Observer {
-    public void update();
+    void update(ConcreteSubject subject);
 }

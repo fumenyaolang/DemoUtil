@@ -23,6 +23,7 @@ public class LogBean {
         this.operUserId = operUserId;
     }
 
+    @Override
     public String toString() {
         return "logId=" + logId + "operUserId=" + operUserId;
     }

@@ -1,7 +1,5 @@
 package com.demos.design.adapter1;
 
-import com.demos.design.builder.*;
-
 /**
  * 类的适配器模式
  * Created by fumenyaolang on 2016-01-04.

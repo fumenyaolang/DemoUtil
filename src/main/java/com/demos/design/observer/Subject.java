@@ -1,15 +1,29 @@
 package com.demos.design.observer;
 
+
 /**
- * Created by fumenyaolang on 2016-01-12.
+ * 观察者模式又叫做发布/订阅模式、数据/视图模式
+ * 观察者模式的主体接口，
+ * 决定了观察者的装配逻辑
  */
 public interface Subject {
-    public void add(Observer observer);
 
-    public void del(Observer observer);
+    /**
+     * 注册观察者
+     *
+     * @param o
+     */
+    void registerObserver(Observer o);
 
-    public void notifyObservers();
+    /**
+     * 移除观察者
+     *
+     * @param o
+     */
+    void removeObserver(Observer o);
 
-    public void operation();
-
+    /**
+     * 通知所有观察者
+     */
+    void notifyObservers();
 }
